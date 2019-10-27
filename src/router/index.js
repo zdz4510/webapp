@@ -110,17 +110,17 @@ export const asyncRoutes = [
       },
       {
         path: 'details',
-        hidden:true,
+        hidden: true,
         component: () => import('@/pages/customer/Details'),
         name: 'details',
         meta: { title: '顾客详情', icon: 'tab' }
       }
     ]
-  } ,
+  },
   {
     path: '/check',
     component: Layout,
-    meta:{title:"审核管理", icon: 'tab' },
+    meta: { title: '审核管理', icon: 'tab' },
     children: [
       {
         path: 'waiter',
@@ -135,7 +135,53 @@ export const asyncRoutes = [
         meta: { title: '提现审核', icon: 'tab' }
       }
     ]
-  } ,
+  },
+  {
+    path: '/products',
+    component: Layout,
+    meta: { title: '产品管理', icon: 'tab' },
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/pages/products/List'),
+        name: 'products',
+        meta: { title: '产品管理', icon: 'tab' }
+      },
+      {
+        path: 'detail',
+        hidden: true,
+        component: () => import('@/pages/products/detail'),
+        name: 'productdetail',
+        meta: { title: '产品详情', icon: 'tab' }
+      }
+    ]
+  },
+  {
+    path: '/category',
+    component: Layout,
+    meta: { title: '栏目管理', icon: 'tab' },
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/pages/category/list'),
+        name: 'category',
+        meta: { title: '栏目管理', icon: 'tab' }
+      }
+    ]
+  },
+  {
+    path: '/waiter',
+    component: Layout,
+    meta: { title: '员工管理', icon: 'tab' },
+    children: [
+      {
+        path: 'list',
+        component: () => import('@/pages/waiter/list'),
+        name: 'waiter',
+        meta: { title: '员工管理', icon: 'tab' }
+      }
+    ]
+  },
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
 ]

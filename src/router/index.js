@@ -118,22 +118,29 @@ export const asyncRoutes = [
     ]
   },
   {
-    path: '/check',
+    path: '/order',
     component: Layout,
-    meta: { title: '审核管理', icon: 'tab' },
     children: [
       {
-        path: 'waiter',
-        component: () => import('@/pages/check/WaiterCheck'),
-        name: 'waiter',
-        meta: { title: '员工审核', icon: 'tab' }
+        path: 'list',
+        component: () => import('@/pages/order/List'),
+        name: 'order',
+        meta: { title: '订单管理', icon: 'tab' }
       },
       {
-        path: 'withdraw',
-        component: () => import('@/pages/check/WithdrawCheck'),
-        name: 'withdraw',
-        meta: { title: '提现审核', icon: 'tab' }
+        path: 'details',
+        hidden: true,
+        component: () => import('@/pages/order/Details'),
+        name: 'details',
+        meta: { title: '订单详情', icon: 'tab' }
       }
+      // {
+      //   path: 'sendOrder',
+      //   hidden:true,
+      //   component: () => import('@/pages/order/sendOrder'),
+      //   name: 'sendOrder',
+      //   meta: { title: '派单', icon: 'tab' }
+      // }
     ]
   },
   {
